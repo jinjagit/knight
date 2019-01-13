@@ -4,16 +4,6 @@ class Knight
     @target = [rand(7), rand(7)]
   end
 
-  def find_moves(square)
-    moves = []
-    deltas = [[2,1], [-2,1], [2,-1], [-2,-1], [1,2], [-1,2], [1,-2], [-1,-2]]
-    deltas.each do |e|
-      move = [square[0] + e[0], square[1] + e[1]]
-      moves << move if move[0] >= 0 && move[0] < 8 && move[1] >= 0 && move[1] < 8
-    end
-    moves
-  end
-
   def find_route
     node = Move.new(@start)
     node = tree_to_target(node)
@@ -41,6 +31,16 @@ class Knight
     node
   end
 
+  def find_moves(square)
+    moves = []
+    deltas = [[2,1], [-2,1], [2,-1], [-2,-1], [1,2], [-1,2], [1,-2], [-1,-2]]
+    deltas.each do |e|
+      move = [square[0] + e[0], square[1] + e[1]]
+      moves << move if move[0] >= 0 && move[0] < 8 && move[1] >= 0 && move[1] < 8
+    end
+    moves
+  end
+
   def algebraic(square)
     file = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
     algebraic = square.to_s + ' ' + file[square[0]] + (square[1] + 1).to_s
@@ -58,7 +58,6 @@ end
 
 knight = Knight.new
 knight.find_route
-p knight.find_moves([3,3])
 
 # example output: (varies every run, as start & target squares are random):
 
