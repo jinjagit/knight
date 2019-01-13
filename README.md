@@ -1,4 +1,4 @@
-IN PROGRESS - Simon Tharby's solution to [Knight's travails exercise](https://www.theodinproject.com/courses/ruby-programming/lessons/data-structures-and-algorithms?ref=lnav), Odin Project:
+Simon Tharby's solution to [Knight's travails exercise](https://www.theodinproject.com/courses/ruby-programming/lessons/data-structures-and-algorithms?ref=lnav), Odin Project:
 
 ### Assignment
 

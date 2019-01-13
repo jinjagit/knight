@@ -42,8 +42,7 @@ class Knight
     while node.square != @target do
       node = queue[0]
       square = node.square
-      to = find_moves(square)
-      to.each do |e|
+      find_moves(square).each do |e|
         new = Move.new(e, node)
         queue << new
       end
@@ -69,3 +68,13 @@ end
 
 knight = Knight.new
 knight.find_route
+
+# example output: (varies every run, as start / target squares are random):
+
+# => the shortest path (in number of knight moves)
+# => from: [3, 5] d6 to: [1, 3] b4 is 5 moves:
+# =>   [3, 5] d6
+# =>   [1, 4] b5
+# =>   [3, 3] d4
+# =>   [2, 1] c2
+# =>   [1, 3] b4
