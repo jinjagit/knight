@@ -6,7 +6,7 @@ class Knight
 
   def find_moves(square)
     moves = []
-    deltas = [[2, 1], [-2, 1], [2, -1], [-2, -1], [1, 2], [-1, 2], [1, -2], [-1, -2]]
+    deltas = [[2,1], [-2,1], [2,-1], [-2,-1], [1,2], [-1,2], [1,-2], [-1,-2]]
     deltas.each do |e|
       move = [square[0] + e[0], square[1] + e[1]]
       moves << move if move[0] >= 0 && move[0] < 8 && move[1] >= 0 && move[1] < 8
