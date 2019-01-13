@@ -38,8 +38,7 @@ class Knight
     queue = [node]
     while node.square != @target do
       node = queue[0]
-      square = node.square
-      find_moves(square).each do |e|
+      find_moves(node.square).each do |e|
         new_node = Move.new(e, node)
         queue << new_node
       end
