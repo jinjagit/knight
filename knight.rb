@@ -1,6 +1,4 @@
 class Knight
-  attr_accessor :start, :target
-
   def initialize
     @start = [rand(7), rand(7)]
     @target = [rand(7), rand(7)]
