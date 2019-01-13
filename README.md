@@ -15,9 +15,9 @@ You can think of the board as having 2-dimensional coordinates. Your function wo
 3. Decide which search algorithm is best to use for this case. Hint: one of them could be a potentially infinite series.
 4. Use the chosen search algorithm to find the shortest path between the starting square (or node) and the ending square. Output what that full path looks like, e.g.:
 
-<code>> knight_moves([3,3],[4,3])</code>
-<code>=> You made it in 3 moves!  Heres your path:</code>
-<code>   [3,3]</code>
-<code>   [4,5]</code>
-<code>   [2,4]</code>
-<code>   [4,3]</code>
+<code>> knight_moves([3,3],[4,3])</code><br>
+<code>=> You made it in 3 moves!  Heres your path:</code><br>
+<code><&nbsp><&nbsp>[3,3]</code><br>
+<code><&nbsp><&nbsp>[4,5]</code><br>
+<code><&nbsp><&nbsp>[2,4]</code><br>
+<code><&nbsp><&nbsp>[4,3]</code><br>
