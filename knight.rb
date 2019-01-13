@@ -56,7 +56,7 @@ class Knight
 end
 
 class Move
-  attr_accessor :from, :square
+  attr_reader :from, :square
 
   def initialize(square, from = nil)
     @square = square
