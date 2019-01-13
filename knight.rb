@@ -30,7 +30,7 @@ class Knight
       route << node.square
       node = node.from
     end
-    route << @start
+    route << node.square
     route.reverse!
     puts "the shortest path (in number of knight moves)"
     puts "from: #{algebraic(@start)} to: #{algebraic(@target)} is #{route.length} moves:"
