@@ -70,7 +70,7 @@ knight.find_route
 # example output: (varies every run, as start & target squares are random):
 
 # => the shortest path (in number of knight moves)
-# => from: [3, 5] d6 to: [1, 3] b4 is 5 moves:
+# => from: [3, 5] d6 to: [1, 3] b4 is 4 moves:
 # =>   [3, 5] d6
 # =>   [1, 4] b5
 # =>   [3, 3] d4
