@@ -6,14 +6,13 @@ class Knight
 
   def find_moves(square)
     delta = [2, 1]
-    new = []
     to = []
     2.times do |i|
       4.times do |j|
         delta[0] = delta[0] * -1
         delta[1] = delta[1] * -1 if j % 2 == 0
-        new = [square[0] + delta[0], square[1] + delta[1]]
-        to << new if new[0] >= 0 && new[0] < 8 && new[1] >= 0 && new[1] < 8
+        move = [square[0] + delta[0], square[1] + delta[1]]
+        to << move if move[0] >= 0 && move[0] < 8 && move[1] >= 0 && move[1] < 8
       end
       delta.reverse!
     end
@@ -41,8 +40,8 @@ class Knight
       node = queue[0]
       square = node.square
       find_moves(square).each do |e|
-        new = Move.new(e, node)
-        queue << new
+        new_node = Move.new(e, node)
+        queue << new_node
       end
       queue = queue.drop(1)
     end
