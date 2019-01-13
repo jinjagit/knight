@@ -5,16 +5,11 @@ class Knight
   end
 
   def find_moves(square)
-    delta = [2, 1]
     moves = []
-    2.times do |i|
-      4.times do |j|
-        delta[0] = delta[0] * -1
-        delta[1] = delta[1] * -1 if j % 2 == 0
-        move = [square[0] + delta[0], square[1] + delta[1]]
-        moves << move if move[0] >= 0 && move[0] < 8 && move[1] >= 0 && move[1] < 8
-      end
-      delta.reverse!
+    deltas = [[2, 1], [-2, 1], [2, -1], [-2, -1], [1, 2], [-1, 2], [1, -2], [-1, -2]]
+    deltas.each do |e|
+      move = [square[0] + e[0], square[1] + e[1]]
+      moves << move if move[0] >= 0 && move[0] < 8 && move[1] >= 0 && move[1] < 8
     end
     moves
   end
@@ -63,6 +58,7 @@ end
 
 knight = Knight.new
 knight.find_route
+p knight.find_moves([3,3])
 
 # example output: (varies every run, as start & target squares are random):
 
