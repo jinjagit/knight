@@ -1,8 +1,8 @@
-Simon Tharby's solution to [Knight's travails exercise](https://www.theodinproject.com/courses/ruby-programming/lessons/data-structures-and-algorithms?ref=lnav), Odin Project:
+IN PROGRESS - Simon Tharby's solution to [Knight's travails exercise](https://www.theodinproject.com/courses/ruby-programming/lessons/data-structures-and-algorithms?ref=lnav), Odin Project:
 
 ### Assignment
 
-Your task is to build a function knight_moves that shows the simplest possible way to get from one square to another by outputting all squares the knight will stop on along the way.
+Your task is to build a function <code>knight_moves</code> that shows the simplest possible way to get from one square to another by outputting all squares the knight will stop on along the way.
 
 You can think of the board as having 2-dimensional coordinates. Your function would therefore look like:
 
