@@ -28,10 +28,9 @@ class Knight
       node = node.from
     end
     route << node.square
-    route.reverse!
     puts "the shortest path (in number of knight moves)"
     puts "from: #{algebraic(@start)} to: #{algebraic(@target)} is #{route.length - 1} moves:"
-    route.each {|e| puts "  #{algebraic(e)}"}
+    route.reverse.each {|e| puts "  #{algebraic(e)}"}
   end
 
   def tree_to_target(node)
