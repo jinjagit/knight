@@ -31,7 +31,7 @@ class Knight
     route << node.square
     route.reverse!
     puts "the shortest path (in number of knight moves)"
-    puts "from: #{algebraic(@start)} to: #{algebraic(@target)} is #{route.length} moves:"
+    puts "from: #{algebraic(@start)} to: #{algebraic(@target)} is #{route.length - 1} moves:"
     route.each {|e| puts "  #{algebraic(e)}"}
   end
 
@@ -67,7 +67,7 @@ end
 knight = Knight.new
 knight.find_route
 
-# example output: (varies every run, as start / target squares are random):
+# example output: (varies every run, as start & target squares are random):
 
 # => the shortest path (in number of knight moves)
 # => from: [3, 5] d6 to: [1, 3] b4 is 5 moves:
