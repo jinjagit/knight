@@ -5,8 +5,7 @@ class Knight
   end
 
   def find_route
-    node = Move.new(@start)
-    node = tree_to_target(node)
+    node = tree_to_target(Move.new(@start))
     route = []
     while node.from != nil do
       route << node.square
