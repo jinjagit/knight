@@ -19,7 +19,7 @@ class Knight
 
   # build tree of Move nodes, using breadth first queueing, until node of
   # target square is added, and return that node. This node will link, via
-  # its parents, to start square node, thus revealing the shortest path.
+  # its parents, to the start square node, thus revealing the shortest path.
   def tree_to_target(node)
     queue = [node]
     while node.square != @target do
