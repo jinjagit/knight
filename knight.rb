@@ -55,8 +55,7 @@ class Move
   end
 end
 
-knight = Knight.new
-knight.find_route
+Knight.new.find_route
 
 # example output: (varies every run, as start & target squares are random):
 
