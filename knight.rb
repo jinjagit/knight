@@ -17,6 +17,9 @@ class Knight
     route.reverse.each {|square| puts "  #{algebraic(square)}"}
   end
 
+  # build tree of Move nodes, using breadth first queueing, until node with
+  # target square is added, then return that node. This node will link, via
+  # its parents to the start square, thus revealing the shortest path.
   def tree_to_target(node)
     queue = [node]
     while node.square != @target do
