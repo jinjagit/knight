@@ -15,15 +15,15 @@ class Knight
     route << node.square
     puts "the shortest path (in number of knight moves)"
     puts "from: #{algebraic(@start)} to: #{algebraic(@target)} is #{route.length - 1} moves:"
-    route.reverse.each {|e| puts "  #{algebraic(e)}"}
+    route.reverse.each {|square| puts "  #{algebraic(square)}"}
   end
 
   def tree_to_target(node)
     queue = [node]
     while node.square != @target do
       node = queue[0]
-      find_moves(node.square).each do |e|
-        new_node = Move.new(e, node)
+      find_moves(node.square).each do |move|
+        new_node = Move.new(move, node)
         queue << new_node
       end
       queue = queue.drop(1)
@@ -34,8 +34,8 @@ class Knight
   def find_moves(square)
     moves = []
     deltas = [[2,1], [-2,1], [2,-1], [-2,-1], [1,2], [-1,2], [1,-2], [-1,-2]]
-    deltas.each do |e|
-      move = [square[0] + e[0], square[1] + e[1]]
+    deltas.each do |delta|
+      move = [square[0] + delta[0], square[1] + delta[1]]
       moves << move if move[0] >= 0 && move[0] < 8 && move[1] >= 0 && move[1] < 8
     end
     moves
