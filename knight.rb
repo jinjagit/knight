@@ -1,7 +1,9 @@
 class Knight
-  def initialize
-    @start = [rand(7), rand(7)]
-    @target = [rand(7), rand(7)]
+  attr_reader :start, :target
+
+  def initialize(start, target)
+    @start = start
+    @target = target
   end
 
   def find_route
@@ -12,9 +14,7 @@ class Knight
       node = node.from
     end
     route << node.square
-    puts "the shortest path (in number of knight moves)"
-    puts "from: #{algebraic(@start)} to: #{algebraic(@target)} is #{route.length - 1} moves:"
-    route.reverse.each {|square| puts "  #{algebraic(square)}"}
+    route.reverse!
   end
 
   # build tree of Move nodes, using breadth first queueing, until node of
@@ -42,11 +42,6 @@ class Knight
     end
     moves
   end
-
-  def algebraic(square)
-    file = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
-    algebraic = square.to_s + ' ' + file[square[0]] + (square[1] + 1).to_s
-  end
 end
 
 class Move
@@ -58,7 +53,19 @@ class Move
   end
 end
 
-Knight.new.find_route
+def algebraic(square)
+  file = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
+  algebraic = square.to_s + ' ' + file[square[0]] + (square[1] + 1).to_s
+end
+
+if __FILE__ == $0
+  knight = Knight.new([rand(7), rand(7)], [rand(7), rand(7)])
+  route = knight.find_route
+
+  puts "the shortest path (in number of knight moves)"
+  puts "from: #{algebraic(knight.start)} to: #{algebraic(knight.target)} is #{route.length - 1} moves:"
+  route.each {|square| puts "  #{algebraic(square)}"}
+end
 
 # example output: (varies every run, as start & target squares are random):
 
