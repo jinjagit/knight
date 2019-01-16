@@ -1,4 +1,4 @@
-require './knight'  #=> add this
+require './knight'
 
 describe "#find_moves" do
   it "returns all knight moves" do
